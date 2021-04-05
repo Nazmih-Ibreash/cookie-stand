@@ -53,7 +53,7 @@ function Shop(shopName, minCust, MaxCust, avgCookiePerHour) {
 
         this.header = document.createElement('h2');
         this.articleElement.appendChild(this.header);
-        this.header.textContent = 'Seattle';
+        this.header.textContent = this.shopName;
         //header.setAttribute('id', 'seattleHead');
 
 
@@ -78,6 +78,15 @@ function Shop(shopName, minCust, MaxCust, avgCookiePerHour) {
 
     };
 }
-let seattle = new Shop('seattle', 23, 65, 6.3);
-console.log(seattle.totalCookiesPerDay());
-seattle.render();
+let Seattle = new Shop('Seattle', 23, 65, 6.3);
+let Tokyo = new Shop('Tokyo', 3, 24, 1.2);
+let Dubai = new Shop('Dubai', 11, 38, 3.7);
+let Paris = new Shop('Paris', 20, 38, 2.3);
+let Lima = new Shop('Lima', 2, 16, 4.6);
+
+console.log(Seattle.totalCookiesPerDay());
+Seattle.render();
+Tokyo.render();
+Dubai.render();
+Paris.render();
+Lima.render();
