@@ -7,6 +7,7 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 let shopLocations = [];
+let addedLocation=[];
 
 function Shop(shopName, minCust, MaxCust, avgCookiePerHour) {
     this.shopName = shopName;
@@ -17,7 +18,8 @@ function Shop(shopName, minCust, MaxCust, avgCookiePerHour) {
     this.cookiesPurchased = [];
     this.totalCookies = 0;
     this.totalsOfHours = 0;
-    this.totalOfTotals=0;
+    this.totalOfTotals = 0;
+    shopLocations.push(this);
 
     this.randomCustPerHour = function () {
         for (let index = 0; index < hours.length; index++) {
@@ -84,7 +86,7 @@ function Shop(shopName, minCust, MaxCust, avgCookiePerHour) {
             this.row.appendChild(this.rowElement);
             this.rowElement.textContent = shopLocations[i].shopName;
 
-            this.totalOfTotals+=shopLocations[i].totalCookies;
+            this.totalOfTotals += shopLocations[i].totalCookies;
 
             for (let j = 0; j < hours.length; j++) {
                 this.rowElement = document.createElement('td');
@@ -95,7 +97,7 @@ function Shop(shopName, minCust, MaxCust, avgCookiePerHour) {
             this.row.appendChild(this.rowElement);
             this.rowElement.textContent = shopLocations[i].totalCookies;
 
-            
+
 
         }
 
@@ -108,13 +110,13 @@ function Shop(shopName, minCust, MaxCust, avgCookiePerHour) {
 
 
         for (let i = 0; i < hours.length; i++) {
-            this.totalsOfHours=0;
+            this.totalsOfHours = 0;
             for (let j = 0; j < shopLocations.length; j++) {
                 this.totalsOfHours += shopLocations[j].cookiesPurchased[i];
             }
             this.cell = document.createElement('th');
             this.headRow.appendChild(this.cell);
-            this.totalsOfHours=Math.round(this.totalsOfHours);
+            this.totalsOfHours = Math.round(this.totalsOfHours);
             this.cell.textContent = this.totalsOfHours;
             console.log(this.totalsOfHours);
         }
@@ -128,13 +130,40 @@ function Shop(shopName, minCust, MaxCust, avgCookiePerHour) {
 
 
     };
-    shopLocations.push(this);
+   
 }
 let Seattle = new Shop('Seattle', 23, 65, 6.3);
 let Tokyo = new Shop('Tokyo', 3, 24, 1.2);
 let Dubai = new Shop('Dubai', 11, 38, 3.7);
 let Paris = new Shop('Paris', 20, 38, 2.3);
 let Lima = new Shop('Lima', 2, 16, 4.6);
+
+//form
+let form = document.getElementById('locationForm');
+console.log(form);
+
+form.addEventListener("submit", addLocation);
+
+function addLocation(event) {
+    event.preventDefault();
+
+    let name = event.target.shopName.value;
+    console.log(name);
+
+    let minC = event.target.min.value;
+    console.log(minC);
+
+    let maxC = event.target.max.value;
+    console.log(maxC);
+
+    let avg = event.target.avg.value;
+    console.log(avg);
+
+    addedLocation = new Shop(name, minC, maxC, avg);
+    shopLocations.push(addedLocation);
+    addedLocation.totalCookiesPerDay();
+}
+
 
 
 
@@ -146,5 +175,4 @@ for (let i = 0; i < shopLocations.length; i++) {
 console.log(shopLocations);
 
 Seattle.render();
-
 
