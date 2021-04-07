@@ -19,7 +19,7 @@ function Shop(shopName, minCust, MaxCust, avgCookiePerHour) {
     this.totalCookies = 0;
     this.totalsOfHours = 0;
     this.totalOfTotals = 0;
-    shopLocations.push(this);
+     shopLocations.push(this);
 
     this.randomCustPerHour = function () {
         for (let index = 0; index < hours.length; index++) {
@@ -160,8 +160,8 @@ function addLocation(event) {
     console.log(avg);
 
     addedLocation = new Shop(name, minC, maxC, avg);
-    shopLocations.push(addedLocation);
-    addedLocation.totalCookiesPerDay();
+    
+    addedLocation.totalCookiesPerDay();addedLocation.render();
 }
 
 
