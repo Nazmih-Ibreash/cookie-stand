@@ -13,8 +13,23 @@
         <h1>Pat's Salmmon Cookies: Sales Data</h1>
     </header>
     <main>
-        <form action="">
+        <form action="" id="locationForm">
+            <fieldset>
+                <label for="shopName">Shop Name: </label>
+                <input type="text" name="shopName" id="shopName" placeholder="Shop Name">
+                <br><br>
+                <label for="minCust">Minimum customers per hour</label>
+                <input type="number" name="minCust" id="min" min="1" max="30">
+                <br><br>
+                <label for="maxCust">Maximum customers per hour</label>
+                <input type="number" name="maxCust" id="max" min="1" max="70">
+                <br><br>
+                <label for="avgCookies">Avg cookies purchased</label>
+                <input type="number" name="avgCookies" id="avg">
+                <br><br>
+                <input type="submit">
 
+            </fieldset>
         </form>
         <br><br>
         <img src="img/salmon.png" alt="salmon" id="salmon">
@@ -22,7 +37,7 @@
         <div id="seattleDiv">
 
         </div>
-        
+
     </main>
     <footer>
 
