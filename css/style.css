@@ -5,14 +5,27 @@
   body{
     background-color: #feffde;
   }
+  header ul li{
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    left: 110px;
+    padding-right: 100px;
+  }
+  header h3 a{
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Zilla Slab Highlight', cursive;
+    color: #30462d;
+  }
 
   header h1{
     color: #52734d;
-    font-size: 30px;
+    font-size: 40px;
     background-color: #ddffbc;
     text-align: center;
-    padding: 15px;
-    font-weight: 900;
+    font-weight: bolder;
+    font-family: 'RocknRoll One', sans-serif;
   }
   #salmon{
     width: 300px;
@@ -40,11 +53,27 @@
     background-color: #52734d;
     padding: 10px;
     width: 30%;
+    font-family: 'Crete Round', serif;
   }
-
+  
   div ul li{
     display: inline-block;
     padding: 10px;
     color: #52734d;
     background-color: #91c788;
+    font-family: 'Fira Sans', sans-serif;
+    margin-bottom: 10px;
+  }
+  #locations li a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    color: #52734d;
+    background-color: #91c788;
+    font-family: 'Fira Sans', sans-serif;
+    margin-bottom: 10px;
+  }
+
+  div img{
+    padding: 10px;
   }
